@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'lijiayang',
-  tagline: 'Do not be afraid of loneliness',
+  tagline: 'Do not be afraid of loneliness!',
   url: 'https://xyljy.top',
   baseUrl: '/blog', 
   onBrokenLinks: 'throw',
