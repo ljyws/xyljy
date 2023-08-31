@@ -9,7 +9,7 @@ const config = {
   title: 'lijiayang',
   tagline: 'Do not be afraid of loneliness',
   url: 'https://xyljy.top',
-  baseUrl: '/blog/', 
+  baseUrl: '/blog', 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
