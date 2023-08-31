@@ -7,14 +7,14 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'lijiayang',
-  tagline: 'Never Knows Best',
-  url: 'https://messiahhh.github.io/',
+  tagline: 'Do not be afraid of loneliness',
+  url: 'https://xyljy.top',
   baseUrl: '/blog/', 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'messiahhh', // Usually your GitHub org/user name.
-  projectName: 'blog', // Usually your repo name.
+  organizationName: 'ljyws', // Usually your GitHub org/user name.
+  projectName: 'xyljy', // Usually your repo name.
   deploymentBranch: 'gh-pages',
   plugins: ['@docusaurus/theme-live-codeblock'],
   i18n: {
@@ -52,13 +52,6 @@ const config = {
           hideable: true
         }
       },
-      announcementBar: {
-        id: 'support_us',
-        content: '⭐️ 如果这个网站能帮助到你，欢迎给一个star支持作者  <a target="_blank" rel="noopener noreferrer" href="https://github.com/Messiahhh/blog">GitHub</a>',
-        backgroundColor: '#fafbfc',
-        textColor: '#091E42',
-        isCloseable: true,
-      }, 
       navbar: {
         title: '',
         hideOnScroll: true,
@@ -70,14 +63,13 @@ const config = {
           {
             type: 'doc',
             docId: 'HOME',
-            position: 'right',
-            label: '正文',
+            position: 'left',
+            label: 'BLOG',
           },
-          // {to: 'blog/面经', label: '面经', position: 'right'},
           {
-            href: 'https://github.com/messiahhh/blog',
+            href: 'https://github.com/ljyws',
             label: 'GitHub',
-            position: 'right',
+            position: 'left',
           },
         ],
       }, 
@@ -97,7 +89,7 @@ const config = {
         // Public API key: it is safe to commit it
         apiKey: 'd3f9fff64e1510e7299229fb32996203',
     
-        indexName: 'messiahhh',
+        indexName: 'ljyws',
       }
     }),
 };

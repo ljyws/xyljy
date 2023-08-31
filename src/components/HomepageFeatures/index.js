@@ -5,28 +5,25 @@ import styles from './styles.module.css';
 const FeatureList = [
   {
     title: 'Support Me',
-    // Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Give me a star at here <a target="_blank" rel="noopener noreferrer" href="https://github.com/Messiahhh/blog">GitHub</a>
+        Follow me at here <a target="_blank" rel="noopener noreferrer" href="https://github.com/ljyws">ljyws@github</a>
       </>
     ), 
   },
   {
     title: 'About Me',
-    // Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        now working at bytedance
+        Studying at CQU
       </>
     ),
   },
   {
     title: 'Contact Me',
-    // Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Wechat: a616348105
+        Wechat: _ljyws
       </>
     ),
   },
