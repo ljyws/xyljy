@@ -6,8 +6,17 @@ const sidebars = {
   tutorialSidebar: [
     
     // "browser",
-    "HOME",
-
+      "HOME",
+      {
+        type: 'category',
+        label: 'Quadruped-Sim',
+        link: {
+            type: 'generated-index',
+        },
+        items: [
+           'EIGEN',
+        ],
+      },
   ]
 }
 module.exports = sidebars;
