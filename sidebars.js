@@ -14,6 +14,16 @@ const sidebars = {
         'quadruped-sim/eigen',
 
       ],
+    },
+
+    {
+      type: 'category',
+      label: 'Mujoco',
+      items: [
+        'MuJoCo/introduce',
+        'MuJoCo/xml',
+
+      ],
     }
   ],
 };
