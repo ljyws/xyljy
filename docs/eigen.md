@@ -1,6 +1,4 @@
 ---
-id: EIGEN
-title: Eigen
-sidebar_label: Eigen
-slug: /
+id: eigen
+title: Eigen矩阵库
 ---

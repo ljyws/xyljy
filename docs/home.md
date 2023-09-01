@@ -1,7 +1,7 @@
 ---
 id: HOME
-title: lijiayang's Wiki
-sidebar_label: 个人简介
+title: Li jiayang's Homepage
+sidebar_label: 主页
 slug: /
 ---
 
