@@ -3,6 +3,8 @@ id: eigen
 title: Eigen
 ---
 
+---
+
 ## Eigen介绍
 
 Eigen库是C++中的一个开源库，主要用于线性代数的运算，包括有向量运算、矩阵运算等等。由于在机器人控制中应用大量线性代数运算，因此需要掌握eigen库的使用。
@@ -54,4 +56,4 @@ g++ test.cpp -o test
 ./test
 ```
 得到  
- <img src="img/eigen_test.png" width = "70%" height = "100%"/>
+![avatar](img/eigen_test.png)
