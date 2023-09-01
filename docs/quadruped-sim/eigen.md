@@ -5,7 +5,7 @@ title: Eigen
 
 ---
 
-## Eigen介绍
+## 介绍
 
 Eigen库是C++中的一个开源库，主要用于线性代数的运算，包括有向量运算、矩阵运算等等。由于在机器人控制中应用大量线性代数运算，因此需要掌握eigen库的使用。
 
@@ -56,4 +56,25 @@ g++ test.cpp -o test
 ./test
 ```
 得到  
-![avatar](img/eigen_test.png)
+![avatar](../img/eigen_test.png)
+
+## eigen头文件
+
+|  modules   | header file  | contents |
+| :-------- | :--------- | :--------- |
+| Core  | #include<Eigen/Core> |Matrix和Array类，基础的线性代数运算 |
+| Geometry | #include<Eigen/Geometry> |旋转、平移等变换 |
+| LU | #include<Eigen/LU> |求逆、求行列式、LU分解 |
+| Cholesky | #include<Eigen/Cholesky> |LLT和LDLT Cholesky分解 |
+| Householder | #include<Eigen/Householder> |豪斯霍尔德变换 |
+| SVD | #include<Eigen/SVD> |SVD分解 |
+| QR | #include<Eigen/QR> |QR分解 |
+| Eigenvalues | #include<Eigen/Eigenvalues> |特征值、特征向量分解 |
+| Sparse | #include<Eigen/Sparse> |稀疏矩阵的存储和基本线性运算 |
+| 稠密矩阵 | #include<Eigen/Dense> |包含了Core、Geometry、LU、Cholesky、SVD、QR、Eigenvalues |
+| 矩阵 | #include<Eigen/Eigen> |包含了Dense和Sparse |
+
+因此在使用时，若无严格要求，可以直接#include<Eigen/Dense>或#include<Eigen/Eigen>即可
+
+## 使用
+学习可以参考：[官方文档](http://eigen.tuxfamily.org/dox/)，或参考CSDN中有许多教程

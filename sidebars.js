@@ -11,7 +11,7 @@ const sidebars = {
       type: 'category',
       label: 'Quadruped-sim',
       items: [
-        'eigen',
+        'quadruped-sim/eigen',
 
       ],
     }
