@@ -1,7 +1,0 @@
----
-id: xml
-title: MuJoCo
----
-
----
-

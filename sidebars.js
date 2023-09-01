@@ -12,6 +12,7 @@ const sidebars = {
       label: 'Quadruped-sim',
       items: [
         'quadruped-sim/eigen',
+        'quadruped-sim/load_model',
 
       ],
     },
@@ -21,7 +22,6 @@ const sidebars = {
       label: 'Mujoco',
       items: [
         'MuJoCo/introduce',
-        'MuJoCo/xml',
 
       ],
     }
