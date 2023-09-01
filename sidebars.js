@@ -12,7 +12,7 @@ const sidebars = {
       label: 'Quadruped-sim',
       items: [
         'quadruped-sim/eigen',
-        'quadruped-sim/load_model',
+        'quadruped-sim/load_robot',
 
       ],
     },
