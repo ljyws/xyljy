@@ -13,6 +13,7 @@ const sidebars = {
       items: [
         'quadruped-sim/eigen',
         'quadruped-sim/load_robot',
+        'quadruped-sim/foot_swing_trajectory'
 
       ],
     },
