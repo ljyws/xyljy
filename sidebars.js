@@ -17,11 +17,21 @@ const sidebars = {
       ],
     },
 
+
     {
       type: 'category',
       label: 'Mujoco',
       items: [
         'MuJoCo/introduce',
+
+      ],
+    },
+
+    {
+      type: 'category',
+      label: 'C++',
+      items: [
+        'c++/template',
 
       ],
     }
