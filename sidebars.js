@@ -35,6 +35,15 @@ const sidebars = {
         'c++/template',
 
       ],
+    },
+
+    {
+      type: 'category',
+      label: 'graduation project',
+      items: [
+        'graduation-project/summary ',
+
+      ],
     }
   ],
 };
