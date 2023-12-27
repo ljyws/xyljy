@@ -41,7 +41,7 @@ const sidebars = {
       type: 'category',
       label: 'graduation project',
       items: [
-        'graduation-project/summary ',
+        'graduation-project/summary',
 
       ],
     }
