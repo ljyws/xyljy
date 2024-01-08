@@ -48,7 +48,7 @@ const sidebars = {
 
     {
       type: 'category',
-      label: '嵌入式',
+      label: 'embedded',
       items: [
         'embedded/vscode+keil',
 
