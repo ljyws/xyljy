@@ -27,10 +27,12 @@ title: vscode绑定keil编译器脚本
 4. driver：驱动层
 5. periph：芯片厂商给的外设包
 6. priject：keil的工程文件
-...（当然还有比如USB、RTOS等等第三方库，这里只是基本最简结构）
+...
+当然还有比如USB、RTOS等等第三方库，这里只是基本最简结构）
+
 ![avatar](../img/嵌入式/vscode_keil_build/1.png)
 
-&emsp;keil工程建立好后，改为ac6编译器并可以成功编译下载。
+keil工程建立好后，改为ac6编译器并可以成功编译下载。
 
 ### vscode配置
 &emsp;vscode的配置就很简单了，主要是得到各种文件的路径，保证在写代码时有自动补全之类的。
