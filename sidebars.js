@@ -50,7 +50,7 @@ const sidebars = {
       type: 'category',
       label: '嵌入式',
       items: [
-        '嵌入式/summary',
+        '嵌入式/vscode+keil',
 
       ],
     }
