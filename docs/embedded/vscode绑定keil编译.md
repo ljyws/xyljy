@@ -28,13 +28,13 @@ title: vscode绑定keil编译器脚本
 5. periph：芯片厂商给的外设包
 6. priject：keil的工程文件
 ...（当然还有比如USB、RTOS等等第三方库，这里只是基本最简结构）
-<div align=center><img src="../img/嵌入式/vscode_keil_build/1.png"></div>
+![avatar](../img/嵌入式/vscode_keil_build/1.png)
 
 &emsp;keil工程建立好后，改为ac6编译器并可以成功编译下载。
 
 ### vscode配置
 &emsp;vscode的配置就很简单了，主要是得到各种文件的路径，保证在写代码时有自动补全之类的。
-<div align=center><img src="../img/嵌入式/vscode_keil_build/2.png"></div>
+![avatar](../img/嵌入式/vscode_keil_build/2.png)
 
 &emsp;然后就是build.bat的配置了，这个文件是用来绑定keil的编译器的，在vscode下直接编译
 
@@ -254,13 +254,13 @@ exit
 直接按F7即可编译，F8下载，F9重新编译
 
 按下F7:
-<div align=center><img src="../img/嵌入式/vscode_keil_build/3.png"></div>
+![avatar](../img/嵌入式/vscode_keil_build/3.png)
 
 按下F8：
-<div align=center><img src="../img/嵌入式/vscode_keil_build/4.png"></div>
+![avatar](../img/嵌入式/vscode_keil_build/4.png)
 
 按下F9:
-<div align=center><img src="../img/嵌入式/vscode_keil_build/5.png"></div>
+![avatar](../img/嵌入式/vscode_keil_build/5.png)
 
 ### 参考文章
 https://blog.csdn.net/xibing0000/article/details/129580363
