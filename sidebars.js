@@ -44,6 +44,15 @@ const sidebars = {
         'graduation-project/summary',
 
       ],
+    },
+
+    {
+      type: 'category',
+      label: '嵌入式',
+      items: [
+        '嵌入式/summary',
+
+      ],
     }
   ],
 };
