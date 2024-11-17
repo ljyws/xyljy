@@ -39,22 +39,33 @@ const sidebars = {
 
     {
       type: 'category',
-      label: 'graduation project',
-      items: [
-        'graduation-project/summary',
-
-      ],
-    },
-
-    {
-      type: 'category',
       label: 'embedded',
       items: [
         'embedded/vscode+keil',
 
       ],
+    },
+
+
+    {
+      type: 'category',
+      label: 'Linux',
+      items: [
+        {
+          type: 'category',
+          label: 'Imx6ull',
+          items: [
+            'Linux/Imx6ull/Imx6ull_uboot_kernel',
+    
+          ],
+        }
+
+      ],
     }
+
+    
   ],
+  
 };
 
 module.exports = sidebars;
