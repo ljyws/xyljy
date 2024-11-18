@@ -266,6 +266,117 @@ struct display_info_t const displays[] = {{
 
 ![](../Imx6ull/img/10.png)
 
+#### 8. 修改网络配置
+官方的EVK开发板使用的是KSZ8081的PHY芯片，正点使用的是LAN8720A这颗PHY芯片，因此需要对uboot中网络配置进行修改
+
+Imx6ull具有两个网络接口，ENET1和ENET2
+
+1. PHY芯片地址修改
+首先对PHY地址进行修改，打开mx6ull_keys_emmc.h文件，主要进行如下修改：
+
+![](img/11.png)
+- 335行，将FEC_ENET1的网络PHY地址改为0x0
+- 339行，将FEC_ENET2的网络PHY地址改为0x1
+- 345行，将原先的MICREL公司名称改为SMSC（LAN8720芯片由SMSC生产，而之前的KSZ8081由MICREL公司生产）
+
+2. 对网络复位引脚的驱动进行修改
+打开mx6ull_keys_emmc.c文件，找到如下几行：
+
+![](img/12.png)
+
+因为NXP的EVK开发板是使用74LV595对IO进行扩展控制的，而原子的板子并没有使用，因此删去这几行，并改写：
+```
+#define ENET1_RESET_IMX_GPIO_NR(5,7)
+#define ENET2_RESET_IMX_GPIO_NR(5,8)
+```
+
+由于ENET1的复位引脚连在SNVS_TAMPER7也就是GPIO5_IO07,ENET2同理，所以改为如下：
+
+![](img/13.png)
+
+3. 删除/注释关于74lv595相关代码  
+
+	a. 找到如下代码并删除/注释：
+	![](img/14.png)
+
+	b. 找到static void iox74lv_init(void)与void iox74lv_set(int index)两个函数，全部删除/注释  
+
+	c. 找到int board_init(void)函数，在该函数中，会通过  
+	` imx_iomux_v3_setup_multiple_pads `  与 ` iox74lv_init() `来初始化74lv595的IO控制，因此要将这两行代码删除/注释  
+
+4. 添加LAN8720A的复位引脚驱动
+在mx6ull_keys_emmc.c文件里，由fec1_pads[]和fec2_pads[]来对ENET1和ENET2的IO进行配置，因此，要在这里添加相应的配置参数：  
+
+在fec1_pads[]最后添加：  
+` MX6_PAD_SNVS_TAMPER7__GPIO5_IO07 | MUX_PAD_CTRL(NO_PAD_CTRL), `
+在fec2_pads[]最后添加：  
+` MX6_PAD_SNVS_TAMPER7__GPIO5_IO08 | MUX_PAD_CTRL(NO_PAD_CTRL), ` 
+  
+继续在文件中查找setup_iomux_fec函数，修改为 ：  
+```
+static void setup_iomux_fec(int fec_id)
+{
+	if (fec_id == 0)
+	{
+		imx_iomux_v3_setup_multiple_pads(fec1_pads,
+						 ARRAY_SIZE(fec1_pads));
+
+		gpio_direction_output(ENET1_RESET, 1);
+		gpio_set_value(ENET1_RESET, 0);
+		mdelay(20);
+		gpio_set_value(ENET1_RESET, 1);
+	}
+	else
+	{
+		imx_iomux_v3_setup_multiple_pads(fec2_pads,
+						 ARRAY_SIZE(fec2_pads));
+	
+		gpio_direction_output(ENET2_RESET, 1);
+		gpio_set_value(ENET2_RESET, 0);
+		mdelay(20);
+		gpio_set_value(ENET2_RESET, 1);
+	}
+}
+
+```
+
+5. 修改驱动文件
+进入drivers/net/phy/phy.c文件，原版的uboot对LAN8720A芯片驱动有问题，需要找到genphy_update_link函数，该函数是通用的phy驱动函数，因此需要修改为：  
+![](img/15.png)
+
+主要是在开头加入了下面这段：  
+```
+#ifdef CONFIG_PHY_SMSC
+
+	static int lan8720_flag = 0;
+	int bmcr_reg = 0;
+	if(lan8720_flag == 0)
+	{
+		bmcr_reg = phy_read(phydev, MDIO_DEVAD_NONE, MII_BMCR);
+		phy_write(phydev, MDIO_DEVAD_NONE,MII_BMCR, BMCR_RESET);
+		while(phy_read(phydev, MDIO_DEVAD_NONE, MII_BMCR) & 0X8000)
+		{
+			udelay(100);
+		}
+
+		phy_write(phydev, MDIO_DEVAD_NONE, MII_BMCR, bmcr_reg);
+		lan8720_flag = 1;
+	}
+#endif
+```
+
+6. 重新编译uboot并烧录
+可以看到网络已经配置好了：
+![](img/16.png)
+
+
+### 结束 uboot移植
+
+
+
+
+
+
 
 
 
