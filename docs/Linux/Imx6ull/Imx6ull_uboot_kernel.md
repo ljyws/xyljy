@@ -373,7 +373,37 @@ static void setup_iomux_fec(int fec_id)
 ### 结束 uboot移植
 
 
+## kernel
 
+### NXP 官方kernel编译
+
+这里直接使用原子提供的NXP官方内核文件，打开顶层的Makefile文件，可以找到如下：
+![](img/17.png)
+
+这里可以直接对ARCH和CROSS_COMPILE进行修改，后期就不需要每次手敲了，写为自己的交叉编译工具：
+
+```
+ARCH		?= $arm
+CROSS_COMPILE	?= arm-linux-gnueabihf-
+```  
+
+保存，执行：
+```
+make clean 
+make imx_v7_mfg_defconfig
+make 
+```
+
+
+这里我会报一个错误：  
+`  multiple definition of 'yylloc'; scripts/dtc/dtc-lexer.lex.o:(.bss+0x0): first defined here  `  
+
+网上有一些说是GCC版本过高，不过可以去找一下这个变量，是在这个位置
+![alt text](img/18.png)  
+在变量的前面extern一下。
+
+可以看到编译成功，生成了ZImage镜像文件，以及一大堆的设备树dtb文件
+![alt text](img/19.png)
 
 
 
