@@ -406,6 +406,22 @@ make
 ![alt text](img/19.png)
 
 
+### 配置自己的kernel
+
+#### 1. 复制配置文件
+将/kernel/arc/arm/configs里面的imx_v7_mfg_defconfig复制一份并命名，我这里命名为imx_keys_emmc_defconfig
+
+#### 2. 添加相应的设备树文件
+ 1. 在arch/arm/boot/dts下复制一份imx6ull-14x14-evk.dts，重命名，我这里改为imx6ull-keys-emmc.dts,后续编译会把dts文件编译成dtb文件
+
+ 2. 修改编译选项，打开dts下面的Makefile,大概400行左右的位置，找到并添加:  
+ ` imx6ull-keys-emmc.dtb `  
+ 添加后如下 ：  
+ ![](img/20.png) 
+
+ 3. 重新编译
+
+
 
 
 
